@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houselio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: white;
+            padding-top: 130px;
+
+        }
+
+        h1 {
+            color: brown;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 20px 60px;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 900;
+        }
+
+        .top-header .brand {
+            color: brown;
+            font-family: cursive;
+            font-size: 36px;
+        }
+
+        #signin {
+            color: #6b4b2a;
+            background-color: #f5e9dd;
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #signin:hover {
+            background-color: #6b4b2a;
+            color: #f5e9dd;
+        }
+
+        /* Main nav */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 60px;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #6b4b2a;
+            background-color: #f5e9dd;
+            border-radius: 30px;
+            padding: 8px 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #6b4b2a;
+            color: #f5e9dd;
+        }
+
+        #searchbar {
+            padding: 8px 15px;
+            border-radius: 30px;
+            background-color: #f5e9dd;
+            outline: none;
+            width: 260px;
+            font-size: 15px;
+        }
+
+        #searchbar::placeholder {
+            color: #6b4b2a;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 80px 20px 40px;
+        }
+
+        #main {
+            font-weight: 700;
+            color: brown;
+            font-style: italic;
+            font-family: cursive;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 20px 60px;
+            margin-top: 20px;
+        }
+
+        .listing {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .listing img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .listing-body {
+            padding: 12px 14px;
+        }
+
+        .listing-title {
+            font-weight: 700;
+            color: #6b4b2a;
+            font-family: cursive;
+            margin-bottom: 6px;
+        }
+
+        .listing-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .listing-cta {
+            display: inline-block;
+            text-decoration: none;
+            background: #6b4b2a;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .listing-cta:hover {
+            opacity: 0.9;
+        }
+
+        hr.section-divider {
+            margin: 40px 60px;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+
+        .agents {
+            display: flex;
+            gap: 24px;
+            padding: 20px 60px;
+            align-items: center;
+        }
+
+        .agent {
+            width: 260px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            text-align: left;
+            padding-bottom: 12px;
+        }
+
+        .agent img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .agent-name {
+            padding: 10px;
+            font-weight: 700;
+            color: #6b4b2a;
+            font-family: cursive;
+        }
+
+        @media (max-width:700px) {
+
+            .top-header,
+            .navbar {
+                padding: 12px 18px;
+            }
+
+            .hero {
+                margin-top: 20px;
+            }
+
+            #main {
+                font-size: 22px;
+            }
+
+            .listings {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Houselio
+    </h1>
+    <div class="top-header">
+        <div class="brand">Houselio</div>
+        <button id="signin">Sign In</button>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Agents</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <input type="text" id="searchbar" placeholder="Search properties, city or MLS ID...">
+    </nav>
+    <section class="hero">
+        <p id="main">Find your next home with Houselio</p>
+    </section>
+    <section class="listings" aria-label="Featured properties">
+        <article class="listing">
+            <img src="https://i.pinimg.com/736x/87/00/ee/8700ee65ccc80b37b01f3cb6c7ebb5ab.jpg"
+                alt="Modern family home exterior">
+            <div class="listing-body">
+                <div class="listing-title">4-Bed Family Home — Lakeside</div>
+                <div class="listing-meta">₹ 1.6 Cr • 4 beds • 3 baths • 2,400 sq ft</div>
+                <a class="listing-cta" href="#">View Details</a>
+            </div>
+        </article>
+
+        <article class="listing">
+            <img src="https://i.pinimg.com/1200x/7b/af/29/7baf290348cc370f7c8ccb8134a571b5.jpg"
+                alt="Luxury apartment living room">
+            <div class="listing-body">
+                <div class="listing-title">2-BHK Luxury Apartment — Downtown</div>
+                <div class="listing-meta">₹ 85 L • 2 beds • 2 baths • 1,050 sq ft</div>
+                <a class="listing-cta" href="#">View Details</a>
+            </div>
+        </article>
+
+        <article class="listing">
+            <img src="https://i.pinimg.com/736x/69/91/a0/6991a06d2c0dfea1f6efa46286d65a81.jpg"
+                alt="Commercial building exterior">
+            <div class="listing-body">
+                <div class="listing-title">Commercial Space — Business District</div>
+                <div class="listing-meta">₹ 3.2 Cr • 5,800 sq ft</div>
+                <a class="listing-cta" href="#">View Details</a>
+            </div>
+        </article>
+
+        <article class="listing">
+            <img src="https://i.pinimg.com/736x/3e/6d/87/3e6d87cc59d27668d08fa795d9d1013a.jpg"
+                alt="Cozy rental interior">
+            <div class="listing-body">
+                <div class="listing-title">Cozy Rental Studio — Near Metro</div>
+                <div class="listing-meta">₹ 18,000 / month • 1 bed • 1 bath • 420 sq ft</div>
+                <a class="listing-cta" href="#">View Details</a>
+            </div>
+        </article>
+    </section>
+
+    <hr class="section-divider">
+
+    <h2 style="font-family:cursive; color:brown; text-align:center; margin-top:20px;">Top Agents & Services</h2>
+
+    <section class="agents" aria-label="Agents">
+        <div class="agent">
+            <img src="https://i.pinimg.com/1200x/1c/85/2e/1c852ea928150dfcf54c5457dbca0a35.jpg"
+                alt="Agent profile photo">
+            <div class="agent-name">Anaya Sharma — Senior Agent</div>
+        </div>
+        <div class="agent">
+            <img src="https://i.pinimg.com/736x/e5/9c/14/e59c1493e407456088bd456159d97ee7.jpg"
+                alt="Agent profile photo">
+            <div class="agent-name">Ryna Bhatia — Property Consultant</div>
+        </div>
+
+        <div class="agent">
+            <img src="https://i.pinimg.com/736x/dc/cc/38/dccc38357920c5e9b3ace4692c6419a9.jpg"
+                alt="Agent profile photo">
+            <div class="agent-name">Mohit Patel — Rentals Specialist</div>
+        </div>
+    </section>
+
+</body>
+
+</html>
