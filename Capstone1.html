@@ -20,7 +20,7 @@
         }
 
         h1 {
-            color: #2C3E50;
+            color: brown;
             display: flex;
             justify-content: left;
             margin: 2px;
@@ -34,6 +34,7 @@
             display: flex;
             justify-content: center;
             margin: 20px;
+            color: brown;
         }
 
         .navbar {
@@ -77,6 +78,7 @@
             padding: 10px;
             margin: 5px;
             color: black;
+            transition: all 0.3s ease;
 
 
 
@@ -121,6 +123,7 @@
 
         button:hover {
             background-color: #A67F68;
+            transform: scale(1.05);
         }
 
 
@@ -157,7 +160,7 @@
             text-align: center;
             margin-top: 40px;
             margin-bottom: 20px;
-            background-color: #6a994e;
+            background-color: #F5F2EE;
         }
 
 
@@ -166,29 +169,51 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #6a994e;
+            background-color: #F5F2EE;
             padding: 30px 0;
         }
 
         .common h2 {
-            color: white;
+            color: brown;
             font-size: 32px;
             margin-bottom: 20px;
         }
 
         .cards {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+            justify-items: center;
+            
+            
         }
 
-        .vid video{
-            height: 400px;
-            display: flex;
-            justify-content: center;
-           
+        .cards img {
+    transition: transform 1s ease;
+}
 
-        }
+.cards img:hover {
+    transform: scale(1.04);
+}
+.vid {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden
+    
+}
+
+video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
     </style>
 </head>
 
@@ -200,7 +225,7 @@
         </div>
         <div class="navnames">
             <a href="#">Services</a>
-            <a href="#">Rent</a>
+            <a href="rent.html">Rent</a>
             <a href="#">Buy</a>
             <a href="#">Contact us</a>
 
@@ -221,11 +246,11 @@
     <h2>Welcome</h2>
     <p>Your one-stop solution for all your housing needs.</p>
     <div class="vid">
-        <video src="https://cdn.pixabay.com/video/2024/05/16/212214_large.mp4" controls autoplay muted loop></video>
+        <video src="https://cdn.pixabay.com/video/2023/10/17/185341-875417497_large.mp4" controls autoplay muted loop></video>
     </div>
 
     <div class="common">
-        <h2>Modern Interior</h2>
+        <h2>Modern Real Estate Designs</h2>
 
         <div class="cards">
             <div class="kitchen">
@@ -245,6 +270,29 @@
                 <p>Living Room Interior</p>
                 <button>View Details</button>
             </div>
+            <div class="kitchen">
+                <img src="https://i.pinimg.com/736x/de/bc/65/debc65005da34f127487ca1efabf4e60.jpg">
+                <p>Cozy house</p>
+                <button>View Details</button>
+            </div>
+
+           
+
+            <div class="condo">
+                <img src="https://i.pinimg.com/1200x/a6/79/a8/a679a818b7744c7d8d6a377323d3a67c.jpg">
+                <p>Bathroom</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="condo">
+                <img src="http://i.pinimg.com/736x/59/10/be/5910beb7471f42a09cc2dcc505813ed0.jpg">
+                <p>Kitchen Interior</p>
+                <button>View Details</button>
+            </div>
+        </div>
+
+              
+            
         </div>
     </div>
 

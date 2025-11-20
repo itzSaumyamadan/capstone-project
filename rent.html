@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent</title>
+
+    <!-- Clean Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #F5F2EE;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* ---------- HEADINGS ---------- */
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 10px auto 30px;
+            color: #444;
+            animation: fadeIn 1.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.4s ease;
+        }
+
+        /* ---------- LAYOUT ---------- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* ---------- CARD ---------- */
+        .card {
+            background-color: white;
+            padding: 15px;
+            width: 280px;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            transition: transform 1s ease-in;
+            animation: fadeUp 5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- IMAGES ---------- */
+        .card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.04);
+        }
+
+        /* ---------- BUTTON ---------- */
+        button {
+            background-color: #2C3E50;
+            color: white;
+            font-weight: 600;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #A67F68;
+            transform: scale(1.05);
+        }
+
+        /* ---------- ANIMATIONS ---------- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Rent a Home</h1>
+    <p>Find your perfect rental property with houselio. Browse through our extensive listings to find homes that fit your needs and budget.</p>
+
+    <h2>Modern Interior</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/47/84/64/478464ddbaf1ff3ce7059eb378fc81d1.jpg">
+            <p>Apartment</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/91/1a/1b/911a1bd47b69952b370e21a4ed0039d7.jpg">
+            <p>Studio</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/c0/d1/26/c0d1264a572a26efb07398d15af52c92.jpg">
+            <p>2 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/69/91/a0/6991a06d2c0dfea1f6efa46286d65a81.jpg">
+            <p>Building</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/14/97/14/149714bb27e026a03420a38845794f73.jpg">
+            <p>Farmhouse</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/f5/43/8c/f5438cf47cae4647d4ea545dcdab4c9f.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/1f/b9/a4/1fb9a4e58c17ff0b3d2d2dba3f2dfe1b.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/84/e3/83/84e383cd15ea843a2b8b03ed552c14f0.jpg">
+            <p>Living Room</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/af/9d/bd/af9dbdd64edd4dcd64eb0033ff9813d7.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/5d/45/e8/5d45e85c6a6d881b8a4231e78fb2acd6.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/c9/b2/e4/c9b2e45a37e5d568012dcb275bdef516.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/6d/d1/bf/6dd1bf0cf126b9ad7da26d3902fddd7d.jpg">
+            <p>4 BHK</p>
+            <button>View Details</button>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
