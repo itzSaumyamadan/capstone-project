@@ -87,7 +87,8 @@
             width: 100%;
             height: 220px;
             border-radius: 10px;
-            object-fit: cover;
+            object-fit: contain;
+            border-radius: 10px;
         }
 
         .agent-card p {
@@ -152,6 +153,18 @@
         height: 200px;
     }
 }
+.info-row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.info-row img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+    object-fit: contain;
+}
 
      
     </style>
@@ -162,12 +175,27 @@
     <h1>Contact Us</h1>
 
     <!-- CONTACT INFO BOX -->
-    <div class="contact-info">
-        <p><span>📞 Phone:</span> +91 98765 43210</p>
-        <p><span>📧 Email:</span> houselio.support@gmail.com</p>
-        <p><span>📸 Instagram:</span> @houselio_official</p>
-        <p><span>📍 Address:</span> MG Road, Bengaluru, India</p>
+   <div class="contact-info">
+    <div class="info-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone">
+        <p>+91 98765 43210</p>
     </div>
+
+    <div class="info-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <p>houselio.support@gmail.com</p>
+    </div>
+
+    <div class="info-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+        <p>@houselio_official</p>
+    </div>
+
+    <div class="info-row">
+        <img src="https://cdn-icons-png.flaticon.com/512/535/535188.png" alt="Location">
+        <p>MG Road, Bengaluru, India</p>
+    </div>
+</div>
 
     <!-- AGENTS SECTION -->
     <div class="agents-section">
