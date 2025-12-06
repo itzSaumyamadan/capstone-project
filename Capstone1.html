@@ -12,7 +12,7 @@
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: #F5F2EE;
-            
+
             margin: 0px;
             padding: 0px;
 
@@ -82,9 +82,10 @@
 
 
         }
+
         .navnames a:hover {
             background-color: #A67F68;
-            
+
         }
 
         .buttons a {
@@ -140,7 +141,8 @@
             background-color: white;
             padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+
             text-align: center;
         }
 
@@ -152,6 +154,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            flex-wrap: wrap;
         }
 
 
@@ -192,35 +195,36 @@
             row-gap: 20px;
             column-gap: 20px;
             justify-items: center;
-            
-            
+            flex-wrap: wrap;
+
+
         }
 
         .cards img {
-    transition: transform 1s ease;
-}
+            transition: transform 1s ease;
+        }
 
-.cards img:hover {
-    transform: scale(1.04);
-}
-.vid {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    overflow: hidden
-    
-}
+        .cards img:hover {
+            transform: scale(1.04);
+        }
 
-video {
-    width: 100%;
-    height: 100%;
+        .vid {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden
+        }
 
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-}
+        video {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+        }
     </style>
 </head>
 
@@ -243,6 +247,7 @@ video {
 
 
         </div>
+        <button id="dark">Dark Mode</button>
         <div>
             <input type="text" placeholder="Search...">
         </div>
@@ -253,7 +258,8 @@ video {
     <h2>Welcome</h2>
     <p>Your one-stop solution for all your housing needs.</p>
     <div class="vid">
-        <video src="https://cdn.pixabay.com/video/2023/10/17/185341-875417497_large.mp4" controls autoplay muted loop></video>
+        <video src="https://cdn.pixabay.com/video/2023/10/17/185341-875417497_large.mp4" controls autoplay muted
+            loop></video>
     </div>
 
     <div class="common">
@@ -283,12 +289,13 @@ video {
                 <button>View Details</button>
             </div>
 
-           
+
 
             <div class="condo">
                 <img src="https://i.pinimg.com/1200x/a6/79/a8/a679a818b7744c7d8d6a377323d3a67c.jpg">
                 <p>Bathroom</p>
                 <button>View Details</button>
+
             </div>
 
             <div class="condo">
@@ -298,17 +305,50 @@ video {
             </div>
         </div>
 
-              
-            
-        </div>
+
+
+    </div>
     </div>
 
+    <script>
+        let btn = document.querySelector("#dark");
+        let comm = document.querySelector(".common")
+        let condo = document.querySelectorAll(".condo");
+        let kit = document.querySelectorAll(".kitchen");
+        let cards = document.querySelector(".cards")
 
-
-
-
-
-
+        btn.addEventListener('click', function () {
+            condo.forEach(function (i) {
+                if (i.style.backgroundColor === "white") {
+                    i.style.backgroundColor = "grey"
+                } else {
+                    i.style.backgroundColor = "white"
+                }
+            })
+            kit.forEach(function (e) {
+                if (e.style.backgroundColor === "white") {
+                    e.style.backgroundColor = "grey"
+                } else {
+                    e.style.backgroundColor = "white"
+                }
+            })
+            if (cards.style.backgroundColor === "white") {
+                cards.style.backgroundColor = "black"
+            } else {
+                cards.style.backgroundColor = "white"
+            }
+            if (document.body.style.backgroundColor === "white") {
+                document.body.style.backgroundColor = "black"
+            } else {
+                document.body.style.backgroundColor = "white"
+            }
+            if (comm.style.backgroundColor === "white") {
+                comm.style.backgroundColor = "black"
+            } else {
+                comm.style.backgroundColor = "white"
+            }
+        })
+    </script>
 </body>
 
 </html>
